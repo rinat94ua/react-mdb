@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_URL, API_KEY } from "../../config";
+import { POPULAR_BASE_URL } from "../../config";
 
 export const useHomeFetch = () => {
   const [state, setState] = useState({ moovies: [] })
@@ -32,7 +32,7 @@ export const useHomeFetch = () => {
   }
 
   useEffect(() => {
-    fetchMoovies(`${API_URL}moovie/popular?api_key=${API_KEY}`)
+    fetchMoovies(POPULAR_BASE_URL)
   }, [])
 
   return [{ state, loading, error }, fetchMoovies]
