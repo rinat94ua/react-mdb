@@ -1,6 +1,6 @@
 import React from 'react'
 
-import StyledHeroImage from '../styles/StyledHeroImage'
+import { StyledHeroImage } from '../styles/StyledHeroImage'
 
 export function HeroImage({ title, text, image }) {
   return (

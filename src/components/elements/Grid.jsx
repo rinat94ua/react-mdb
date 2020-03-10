@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { StyledGrid, StylesGridContent } from '../styles/StyledGrid'
+import { StyledGrid, StyledGridContent } from '../styles/StyledGrid'
 
 export function Grid({ header, children }) {
   return <StyledGrid>
     <h1>{header}</h1>
-    <StylesGridContent>
+    <StyledGridContent>
       {children}
-    </StylesGridContent>
+    </StyledGridContent>
   </StyledGrid>
 }

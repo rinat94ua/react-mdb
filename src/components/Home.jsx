@@ -11,7 +11,7 @@ import { Spinner } from './elements/Spinner'
 
 import { useHomeFetch } from './hooks/useHomeFetch'
 
-import NoImage from './images/no_image.png'
+import NoImage from './images/no_image.jpg'
 
 
 export function Home() {
@@ -20,7 +20,7 @@ export function Home() {
       state: { moovies, currentPage, totalPages, heroImage },
       loading,
       error
-    }, fetchMoovies] = useHomeFetch
+    }, fetchMoovies] = useHomeFetch()
   const [searchTerm, setSearchTerm] = useState('')
 
   const searchMovies = search => {

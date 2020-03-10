@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { StylesSpinner } from '../styles/StyledSpinner'
+import { StyledSpinner } from '../styles/StyledSpinner'
 
 export function Spinner() {
-  return <StylesSpinner>Spinner</StylesSpinner>
+  return <StyledSpinner>Spinner</StyledSpinner>
 }
