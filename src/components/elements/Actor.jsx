@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { StyledActor } from '../styles/StyledActor'
 
@@ -20,4 +21,8 @@ export function Actor({ actor }) {
     <span className="actor-name">{actor.name}</span>
     <span className="actor-character">{actor.character}</span>
   </StyledActor>
+}
+
+Actor.propTypes = {
+  actor: PropTypes.object
 }
