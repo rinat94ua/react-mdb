@@ -15,13 +15,13 @@ import NoImage from './images/no_image.jpg'
 
 
 export function Home() {
+  const [searchTerm, setSearchTerm] = useState('')
   const [
     { 
       state: { moovies, currentPage, totalPages, heroImage },
       loading,
       error
-    }, fetchMoovies] = useHomeFetch()
-  const [searchTerm, setSearchTerm] = useState('')
+    }, fetchMoovies] = useHomeFetch(searchTerm)
 
   const searchMovies = search => {
     const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL

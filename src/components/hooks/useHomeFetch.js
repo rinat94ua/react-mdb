@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { POPULAR_BASE_URL } from "../../config";
 
-export const useHomeFetch = () => {
+export const useHomeFetch = (searchTerm) => {
   const [state, setState] = useState({ moovies: [] })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -32,8 +32,19 @@ export const useHomeFetch = () => {
   }
 
   useEffect(() => {
-    fetchMoovies(POPULAR_BASE_URL)
+    if(sessionStorage.homeState) {
+      setState(JSON.parse(sessionStorage.homeState))
+      setLoading(false)
+    } else {
+      fetchMoovies(POPULAR_BASE_URL)
+    }
   }, [])
+
+  useEffect(() => {
+    if(!searchTerm) {
+      sessionStorage.setItem('homeState', JSON.stringify(state))
+    }
+  }, [searchTerm, state])
 
   return [{ state, loading, error }, fetchMoovies]
 }
